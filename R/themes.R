@@ -29,6 +29,7 @@ plot_theme <- function() {
 #' @return Sass theme for the app
 #' @export
 app_theme <-  function() {
+
   bslib::bs_theme(version="5",
                   primary='#354c97',
                   secondary = '#212529',
@@ -39,5 +40,5 @@ app_theme <-  function() {
                   font_scale=.8) %>%
     bslib::bs_add_variables("offcanvas-horizontal-width"="300px",
                             "offcanvas-vertical-height"="20vh") %>%
-    bslib::bs_add_rules(sass::sass_file(system.file("rules.scss", package="ABTestDeception")))
+    bslib::bs_add_rules(sass::sass_file(rules_file))
 }
