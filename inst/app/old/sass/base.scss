@@ -1,0 +1,153 @@
+@import "functions.scss";
+
+
+
+//@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+$font-family-base: 'Roboto Condensed';
+$font-family-sans-serif: 'Roboto Condensed';
+
+/* $font-family-base: 'Pacifico';
+   $font-family-sans-serif: 'Pacifico'; */
+
+
+$smu-blue:      #354c97;
+$smu-red:      rgba(204,0,0,1);
+$smu-purple: #522d80;
+$princeton-orange: rgba(231,117,0,1); // Princeton
+$smu-teal: rgba(89,195,195,1);
+
+$light: #f8f9fa;
+$dark: #212529;
+
+
+$primary: $smu-blue;
+$secondary: $dark;
+$success: $smu-teal;
+$info: $smu-red;
+$warning: $princeton-orange;
+$danger: #6610f2;
+
+
+
+$offcanvas-horizontal-width: 300px;
+$offcanvas-vertical-height: 20vh;
+
+@import "variables.scss";
+
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: $body-bg;
+
+}
+
+
+h2, h3 {
+  font-size: $h4-font-size;
+}
+
+//Sidebar is a .well class
+//.well {
+//  background-color: $body-bg;
+//}
+
+
+.irs {
+  font-family: $font-family-sans-serif;
+  color: $secondary; //princeton-orange;
+}
+
+.offcanvas-body {
+  .irs {
+    color: $primary;
+
+  }
+}
+
+.irs--shiny {
+  .irs-bar {
+    color: $white;
+    background: $secondary;
+    border: 1px solid $secondary;
+  }
+
+  .irs-single {
+    font-size: 1rem;
+    color: $dark;
+    background: $light;
+  }
+
+  .irs-grid-text {
+    font-size: 1rem;
+
+  }
+}
+
+.table {
+  tr,td {
+    padding: 0px;
+  }
+}
+
+.shiny-input-container {
+  .control-label {
+    color: $primary;
+    font-size: $font-size-sm;
+    align: center;
+  }
+  border: 1px solid green;
+}
+
+.ratio-box {
+  @extend .row;
+  p {
+    margin-bottom: 2px;
+  }
+}
+
+.area-output {
+  @extend .d-flex, .flex-wrap, .justify-content-center, .align-items-start;
+}
+
+.app-content-box {
+  @extend .d-lg-flex, .justify-content-center, .align-items-center, .px-0, .mx-0, ;
+  p {
+    @extend .m-0,.py-0;
+  }
+}
+
+.ratio-content-box {
+  @extend .col-6, .app-content-box;
+}
+
+.mix-content-box {
+  @extend .col-lg-9, .app-content-box;
+  border: 1px solid red;
+}
+
+.table-content-box {
+  @extend .col-lg-3, .app-content-box;
+  border: 1px solid blue;
+}
+
+
+
+.ratio-sliders {
+  @extend .d-flex, .justify-content-around, .align-items-end;
+  //@extend .col-sm-6, .justify-content-center, .align-items-end;
+  text-align: center;
+
+  /* .shiny-input-container {
+     padding: 0px;
+     margin: .5rem;
+     } */
+}
+
+  .MathJax_Display {
+    @extend .p-0, .m-0;
+  }
+
+@import "bootstrap.scss";

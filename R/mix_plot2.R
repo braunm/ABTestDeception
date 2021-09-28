@@ -6,6 +6,10 @@
 #' @export
 mix_plot2 <- function(XZ, All, g, M, prior_color='darkgreen') {
 
+  fmt3 <- scales::label_number(.001)
+  fmt2 <- scales::label_number(.01)
+
+
   D2 <- XZ %>%
     dplyr::select(X, Z, post, lift) %>%
     pivot_wider(names_from=X, values_from=c(post, lift)) %>%

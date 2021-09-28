@@ -10,6 +10,8 @@ egg_plot2 <- function(XZ, g, zeta, col='PrTargXZ') {
   gx <- 10 * (2 * (1 - g) - 1)
   hx <- 10 * (2 * zeta - 1)
 
+  fmt0 <- scales::label_number(1)
+
   q1 <- XZ %>%
     filter(X != "All") %>%
     select(X, Z, {{col}}) %>%

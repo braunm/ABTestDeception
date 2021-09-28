@@ -27,6 +27,7 @@ ry="$$\\rho_Y~$$Response interaction"
 #' @param label  string for label (possibly MathJax
 #' @param grid use the grid on the slider?
 #' @param ... other parameters passed to sliderTextinput
+#' @export
 this_sliderBox <- function(name, label, grid=TRUE, ...) {
 
  ## steps_var <- rlang::sym(str_c("steps$", name))

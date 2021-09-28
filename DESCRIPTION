@@ -24,15 +24,16 @@ Imports:
    forcats,
    MASS,
    methods,
-   shiny,
+   shiny (>= 1.7),
    rlang,
    ggrepel,
-   bslib,
+   bslib (>= 0.3.0.9000),
    sass,
    shinyWidgets,
    showtext,
    scales,
-   thematic
+   thematic,
+   kableExtra
 Suggests:
     spelling
 Language: en-US
