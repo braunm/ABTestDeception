@@ -34,13 +34,13 @@ egg_plot2 <- function(XZ, g, zeta, col='PrTargXZ') {
                  y0=(c(1, -1) * 10 + gx) / 2)
 
   P  <- ggplot() +
-    geom_ribbon(data=q2[[1]], aes(x=x, ymin=pmax(gx, yU),ymax=pmax(gx, yL)),
+    geom_ribbon(data=q2[[1]], aes(x=x, ymin=pmax(gx, .data$yU),ymax=pmax(gx, .data$yL)),
                 fill=plot_colors$P, alpha=1) +
-    geom_ribbon(data=q2[[1]], aes(x=x, ymin=pmin(gx, yU),ymax=pmin(gx, yL)),
+    geom_ribbon(data=q2[[1]], aes(x=x, ymin=pmin(gx, .data$yU),ymax=pmin(gx, .data$yL)),
                 fill=plot_colors$Q, alpha=1) +
-    geom_ribbon(data=q2[[2]], aes(x=x, ymin=pmax(gx, yU),ymax=pmax(gx, yL)),
+    geom_ribbon(data=q2[[2]], aes(x=x, ymin=pmax(gx, .data$yU),ymax=pmax(gx, .data$yL)),
                 fill=plot_colors$P, alpha=1) +
-    geom_ribbon(data=q2[[2]], aes(x=x, ymin=pmin(gx, yU),ymax=pmin(gx, yL)),
+    geom_ribbon(data=q2[[2]], aes(x=x, ymin=pmin(gx, .data$yU),ymax=pmin(gx, .data$yL)),
                 fill=plot_colors$Q, alpha=1) +
     scale_x_continuous(breaks = seq(-10, 10, by=1)) +
     scale_y_continuous(breaks = seq(-10, 10, by=1)) +

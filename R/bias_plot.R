@@ -10,7 +10,7 @@ bias_plot <- function(pt_idx, ...) {
   args <- list(...)
 
   D2 <- data %>%
-    pivot_longer(cols = c(Err_A, Err_B, bias), names_to='stat',
+    pivot_longer(cols = c('Err_A', 'Err_B', 'bias'), names_to='stat',
                  values_to='value') %>%
     mutate(stat=fct_recode(factor(stat, levels=c("Err_A", "Err_B", "bias")),
                            "Error Ad A"="Err_A",

@@ -1,0 +1,17 @@
+url: https://braunm/github.io/ABTestDeception
+
+authors:
+- name: Michael Braun
+  href: https://braunm.github.io
+- name: Eric Schwartz
+
+template:
+  params:
+    bootswatch: united
+
+reference:
+- title: Launching the app
+  desc: >
+    This is the only function you need to know.
+- contents:
+    - launch

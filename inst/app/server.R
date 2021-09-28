@@ -67,11 +67,11 @@ server <- function(input, output, session) {
         mutate(X= fct_recode(factor(X), Poets='P', Quants='Q', All='All'))  %>%
         rename("User type"="X") %>%
         knitr::kable("html", align = 'lcc', digits=c(0, 2, 2)) %>%
-        kable_styling() %>%
-        row_spec(1, color=plot_colors$P) %>%
-        row_spec(2, color=plot_colors$Q) %>%
-        add_header_above(c(" ", "being targeted"=2)) %>%
-        add_header_above(c(" ", "Probability of"=2))
+        kableExtra::kable_styling() %>%
+        kableExtra::row_spec(1, color=plot_colors$P) %>%
+        kableExtra::row_spec(2, color=plot_colors$Q) %>%
+        kableExtra::add_header_above(c(" ", "being targeted"=2)) %>%
+        kableExtra::add_header_above(c(" ", "Probability of"=2))
   }
 
   ## Full Audience
@@ -83,11 +83,11 @@ server <- function(input, output, session) {
         mutate(X= fct_recode(factor(X), Poets='P', Quants='Q', All='All'))  %>%
         rename("User type"="X") %>%
         knitr::kable("html", align = 'lcc', digits=c(0, 2, 2)) %>%
-        kable_styling() %>%
-        row_spec(1, color=plot_colors$P) %>%
-        row_spec(2, color=plot_colors$Q) %>%
-        add_header_above(c(" ", "Conversion Rate"=2)) %>%
-        add_header_above(c(" ", "Audience"=2))
+        kableExtra::kable_styling() %>%
+        kableExtra::row_spec(1, color=plot_colors$P) %>%
+        kableExtra::row_spec(2, color=plot_colors$Q) %>%
+        kableExtra::add_header_above(c(" ", "Conversion Rate"=2)) %>%
+        kableExtra::add_header_above(c(" ", "Audience"=2))
   }
 
 

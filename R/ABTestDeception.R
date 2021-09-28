@@ -13,27 +13,18 @@
 #' @importFrom scales label_number
 #' @importFrom sass sass
 #' @importFrom shinyWidgets sliderTextInput
+#' @importFrom grDevices rgb
+#' @importFrom kableExtra kable_styling row_spec add_header_above
 #' @import shiny
+#' @import stringr
+#' @import forcats
 #' @import thematic
-#' @import kableExtra
 #' @import ggrepel
 #' @import rlang
-#' @import tidyverse
+#' @import dplyr
+#' @import ggplot2
+#' @import tidyr
 #' @import showtext
 #' @import sass
 #' @import methods
 NULL
-
-
-
-## Imports:
-##     shiny (>=1.7.0),
-##     rlang,
-##     ggrepel,
-##     bslib,
-##     sass,
-##     shinyWidgets,
-##     kableExtra,
-##     showtext,
-##     scales,
-##     thematic
