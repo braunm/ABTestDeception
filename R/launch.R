@@ -3,6 +3,6 @@
 #' @export
 launch <- function() {
 
-  shiny::runApp(system.file("inst/app", package='ABTestDeception'))
+  shiny::runApp(system.file("app", package='ABTestDeception'))
 
 }
