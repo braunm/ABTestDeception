@@ -39,5 +39,5 @@ app_theme <-  function() {
                   font_scale=.8) %>%
     bslib::bs_add_variables("offcanvas-horizontal-width"="300px",
                             "offcanvas-vertical-height"="20vh") %>%
-    bslib::bs_add_rules(sass::sass_file("rules.scss"))
+    bslib::bs_add_rules(sass::sass_file(system.file("rules.scss", package="ABTestDeception")))
 }
