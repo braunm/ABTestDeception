@@ -24,11 +24,8 @@ plot_theme <- function() {
           plot.margin=margin())
 }
 
-#' @name get rules file
-#' @title sass file
-rules_file <- function() {
-  system.file("www/rules.scss", package="ABTestDeception")
-}
+## #' @name get rules file
+## #' @title sass file
 
 
 #' @name app_theme
@@ -36,17 +33,23 @@ rules_file <- function() {
 #' @return Sass theme for the app
 #' @export
 app_theme <-  function() {
+
+   rules_file <- function() {
+    system.file("www/rules.scss", package="ABTestDeception")
+  }
+
   bslib::bs_theme(version="5",
                   primary='#354c97',
                   secondary = '#212529',
                   success='rgba(89,195,195,1)',
                   warning='orange',
+                  danger=smu_red,
                   light='white',
                   base_font=font_google("Roboto Condensed"),
                   heading_font=font_google("Roboto Condensed"),
                   font_scale=.8) %>%
     bslib::bs_add_variables(
       "offcanvas-horizontal-width"="300px",
-      "offcanvas-vertical-height"="20vh") %>%
+      "offcanvas-vertical-height"="25vh") %>%
     bslib::bs_add_rules(sass::sass_file(rules_file()))
 }

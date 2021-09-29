@@ -7,17 +7,24 @@ offcanvas <- div(class= "offcanvas offcanvas-top", tabindex="-1",
                                  class="btn-close text-reset"),
                      h5(class="offcanvas-title", id="settingsLabel", "Additional Settings")
                      ),
-                 div(class="offcanvas-body",
-                     div(class='ratio-sliders',
-                         this_sliderBox("My", withMathJax(sldr$My), selected=.1, width='150px'),
-                         this_sliderBox("EY0P", sldr$EY0P, selected=0, width='150px'),
-                         this_sliderBox("EY0Q", sldr$EY0Q, selected=0, width='150px'),
-                         this_sliderBox("gamma", "$$\\gamma_P$$", selected=.5, width='150px'),
-                         this_sliderBox("zeta", "$$\\zeta_A$$", selected=.5, width='150px'),
-                         this_sliderBox("Mt", "$$\\tilde{\\Phi}$$", selected=.1, width='150px')
-                         )
+                 div(class="row offcanvas-body",
+                     div(class='col-6 m-0',
+                         div(class='row ratio-sliders',
+                             div(class='d-flex flex-nowrap justify-content-center',
+                                 "Audience response rates"),
+                             this_sliderBox("My", withMathJax(sldr$My), selected=.1, width='150px'),
+                             this_sliderBox("EY0P", sldr$EY0P, selected=0, width='150px'),
+                             this_sliderBox("EY0Q", sldr$EY0Q, selected=0, width='150px'))),
+                     div(class='col-6 m-0',
+                         div(class='row ratio-sliders',
+                             div(class='d-flex flex-nowrap justify-content-center',
+                                 "Other ratios"),
+                             this_sliderBox("gamma", sldr$gamma, selected=.5, width='150px'),
+                             this_sliderBox("zeta", sldr$zeta, selected=.5, width='150px'),
+                             this_sliderBox("Mt",sldr$Phi , selected=.1, width='150px')))
                      )
                  )
+
 
 offcanvas_btn <- tags$a(class="btn btn-primary", `data-bs-toggle`="offcanvas",
                         href="#settings", role="button",
@@ -25,22 +32,22 @@ offcanvas_btn <- tags$a(class="btn btn-primary", `data-bs-toggle`="offcanvas",
 
 
 
-header <-     div(class='position-fixed bg-light border',
+header <-     div(class='position-fixed bg-light',
                   div(class='d-flex flex-nowrap',
                       offcanvas,
                       div(class='me-auto', offcanvas_btn),
                       div(class='me-auto', h3("Divergent Delivery and Response Heterogeneity"))),
                   div(class="row",
-                      div(class='col-6 border',
-                          div(class='row ratio-sliders border ',
+                      div(class='col-6',
+                          div(class='row ratio-sliders ',
                               div(class='d-flex flex-nowrap justify-content-center',
                                   "Ratios of targeting probabilities"),
                               this_sliderBox("at", sldr$at, selected=1, width='130px'),
                               this_sliderBox("pt", sldr$pt, selected=1, width='130px'),
                               this_sliderBox("rt", sldr$rt, selected=5, width='130px')
                               )),
-                      div(class='col-6 border',
-                          div(class='row ratio-sliders border',
+                      div(class='col-6',
+                          div(class='row ratio-sliders',
                               div(class='d-flex flex-nowrap justify-content-center',
                                   "Ratios of expected conversion rates"),
                               this_sliderBox("ay", sldr$ay, selected=2, width='130px'),
@@ -52,24 +59,24 @@ header <-     div(class='position-fixed bg-light border',
 
 
 body <-  div(
-             div(class="row",style="padding-top: 230px;",
+             div(class="row",style="padding-top: 200px;",
                  div(class='col-6',
-                     div(class='d-flex flex-wrap align-items-start justify-content-center',
+                     div(class='d-sm-flex flex-wrap align-items-start justify-content-evenly',
                          plotOutput("areaTarg", height='300px', width='50%'),
                          tableOutput("targ_table")
                          )
                      ),
                  div(class='col-6',
-                     div(class='d-flex flex-wrap align-items-start justify-content-center',
+                     div(class='d-sm-flex flex-wrap align-items-start justify-content-evenly',
                          plotOutput("areaEY", height='300px', width='50%'),
                          tableOutput("EY_table")
                          )
                      )
                  ),
-                 div(class="d-flex flex-wrap align-items-center px-0 mx-0 border",
+                 div(class="d-flex flex-wrap align-items-center px-0 mx-0",
                      plotOutput("mix_plot")
                  ),
-             div(class='d-flex flex-wrap align-items-start justify-content-around border',
+             div(class='d-flex flex-wrap align-items-start justify-content-around',
                  tableOutput("agg_table"),
                  plotOutput("bias_plot", width="70%")
                  )

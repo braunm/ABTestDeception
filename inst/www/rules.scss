@@ -3,6 +3,7 @@ h2, h3 {
   font-size: $h4-font-size;
 }
 
+
 .irs {
   font-family: $font-family-sans-serif;
   color: $primary; //princeton-orange;
@@ -71,18 +72,21 @@ h2, h3 {
 
 .mix-content-box {
   @extend .col-lg-9, .app-content-box;
-  border: 1px solid red;
+  border: 1px solid $danger;
 }
 
 .table-content-box {
   @extend .col-lg-3, .app-content-box;
-  border: 1px solid blue;
+  border: 1px solid $primary;
 }
 
 .ratio-sliders {
   @extend .d-flex, .justify-content-around, .align-items-end;
+
   //@extend .col-sm-6, .justify-content-center, .align-items-end;
   text-align: center;
+
+  border: 1px solid $danger;
 
   /* .shiny-input-container {
      padding: 0px;
@@ -90,9 +94,15 @@ h2, h3 {
      } */
 }
 
-  .MathJax_Display {
-    @extend .p-0, .m-0;
-  }
+.offcanvas-body .ratio-sliders {
+
+  border: 2px solid $primary;
+
+}
+
+.MathJax_Display {
+  @extend .p-0, .m-0;
+}
 
 .egg {
   border: 1px solid green;
