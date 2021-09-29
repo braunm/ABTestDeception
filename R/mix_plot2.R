@@ -68,7 +68,7 @@ mix_plot2 <- function(XZ, All, g, M, prior_color='darkgreen') {
     select(Z, lift_P, lift_Q) %>%
     crossing(sig=seq(0, 1, length=50)) %>%
     mutate(y=(1 - sig) * lift_P + sig * lift_Q,
-           color=rgb(get_PQ_mix(sig), max=255))
+           color=rgb(get_PQ_mix(sig), maxColorValue =255))
 
   P1 <- ggplot(data=D2) +
      geom_line(data=mix_line, aes(x=sig, y=y, color=color, group=Z), size=1) +

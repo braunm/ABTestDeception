@@ -2,6 +2,7 @@
 #' @title bias_plot
 #' @description create a bias plot
 #' @param pt_idx value of pt that will be highlighted in the plot
+#' @param ... the full set of ratios
 bias_plot <- function(pt_idx, ...) {
 
   x <- c(2^seq(-4,4, length=20), pt_idx)

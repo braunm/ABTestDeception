@@ -5,7 +5,9 @@
 #' @param g prior
 #' @param zeta zeta
 #' @param col column of XZ being used for the eggs (either PrTargXZ or EY?)
+#' @importFrom rlang .data
 egg_plot2 <- function(XZ, g, zeta, col='PrTargXZ') {
+
 
   gx <- 10 * (2 * (1 - g) - 1)
   hx <- 10 * (2 * zeta - 1)
@@ -13,8 +15,8 @@ egg_plot2 <- function(XZ, g, zeta, col='PrTargXZ') {
   fmt0 <- scales::label_number(1)
 
   q1 <- XZ %>%
-    filter(X != "All") %>%
-    select(X, Z, {{col}}) %>%
+    filter(.data$X != "All") %>%
+    select(.data$X, .data$Z, {{col}}) %>%
     pivot_wider(names_from=X, values_from = {{col}}) %>%
     mutate(PrZ=c(zeta, 1 - zeta)) %>%
     rowwise() %>%

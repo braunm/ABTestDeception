@@ -35,7 +35,6 @@ Fspb <- function(rt, at, pt,  h, g) {
 }
 
 #' @rdname analytic_posteriors
-#' @param rt rho_t
 #' @param spb sigma_PB
 #' @export
 Fspa <- function(rt, spb) {
@@ -50,8 +49,7 @@ Fspa <- function(rt, spb) {
 #' @param ay,py,ry alpha, pi, and rho for EY
 #' @param h allocation probability Prob(Z=A)
 #' @param g Prob(X=P) for audience
-#' @param MY average potential lift Y1 for audience
-#' @param theta0 baseline EY0 if unexposed
+#' @param My average potential lift Y1 for audience
 #' @return lambda_XZ
 #' @export
 FLpa <- function(ay, py, ry, h, g, My) {
@@ -120,10 +118,11 @@ FLsqrt <- function(ay, py, ry, h, g) {
 #' @title F_all
 #' @param at,pt,rt alpha, pi, and rho for targeting
 #' @param ay,py,ry alpha, pi, and rho for EY
-#' @param MY average potential lift Y1 for audience
+#' @param Mt aggregate targeting probability
+#' @param My average potential lift Y1 for audience
 #' @param h allocation probability Prob(Z=A)
 #' @param g Prob(X=P) for audience
-#' @param EY0P, EY0Q baseline response rates
+#' @param EY0P,EY0Q baseline response rates
 #' @return list of all computed values
 #' @export
 F_all<- function(at, pt, rt, Mt, ay, py, ry, My, g, h, EY0P=0, EY0Q=0) {
@@ -190,14 +189,15 @@ F_all<- function(at, pt, rt, Mt, ay, py, ry, My, g, h, EY0P=0, EY0Q=0) {
 }
 
 
-#' @name bias
-#' @title bias
+#' @name F_bias
+#' @title F_bias
 #' @param at,pt,rt alpha, pi, and rho for targeting
 #' @param ay,py,ry alpha, pi, and rho for EY
-#' @param MY average potential lift Y1 for audience
+#' @param Mt aggregate targeting probability
+#' @param My average potential lift Y1 for audience
 #' @param zeta allocation probability Prob(Z=A)
 #' @param g Prob(X=P) for audience
-#' @param EY0P, EY0Q baseline response rates
+#' @param EY0P,EY0Q baseline response rates
 #' @return list of all computed values
 #' @details vectorized, to support plotting
 #' @export

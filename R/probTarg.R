@@ -45,7 +45,7 @@ get_PrTarg <- function(PrTargXZ, PrXZ) {
 
 #' @name get_postXZ
 #' @title Get posterior prob of X, given targ and Z
-#' @param PrTargXZ tibble with coljumns X, Z, PrTargXZ
+#' @param PrTargXZ tibble with columns X, Z, PrTargXZ
 #' @param PrXZ tibble with columns X, Z, PrX, PrZ
 #' @details Pr(X|targ,Z)=Pr(targ|X,Z)*Pr(X|Z)/Pr(targ|Z)
 #' @export
@@ -71,4 +71,3 @@ get_postXZ <- function(PrTargXZ, PrXZ) {
 
   return(res)
 }
-

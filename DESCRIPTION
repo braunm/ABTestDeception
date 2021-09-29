@@ -28,6 +28,7 @@ Imports:
    shiny (>= 1.7),
    rlang,
    ggrepel,
+   knitr,
    bslib (>= 0.3),
    sass,
    shinyWidgets,
@@ -35,6 +36,4 @@ Imports:
    scales,
    thematic,
    kableExtra
-Suggests:
-    spelling
 Language: en-US

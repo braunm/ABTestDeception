@@ -15,6 +15,7 @@
 #' @importFrom shinyWidgets sliderTextInput
 #' @importFrom grDevices rgb
 #' @importFrom kableExtra kable_styling row_spec add_header_above
+#' @import knitr
 #' @import shiny
 #' @import stringr
 #' @import forcats
@@ -27,4 +28,9 @@
 #' @import showtext
 #' @import sass
 #' @import methods
-NULL
+globalVariables(c('X', 'Z', 'post', 'lift', 'lift_targ', 'XZ', 'PrX', 'PrZ',
+                  'post_Q', 'mixQ', 'EY_XZ', 'x0', 'y0', 'w', 'h', 'angle', 'axislab',
+                  'value', 'pt', 'Mt', 'Xname', 'lab', 'lift_P', 'lift_Q', 'siglab',
+                  'prior_Q', 'scope', 'A', 'B', 'diffAB', 'Targ', 'Aud', 'y', 'err_label',
+                  'xlabs', 'color', 'xbars', 'sig', 'PrTargXZ', 'EY', 'lift_ATE',
+                  'label', 'R', 'err_color', 'x', 'mix_color', 'lift_All'))

@@ -24,7 +24,9 @@ oval_ypos <- function(PZ, QZ, yrad, g, fudge=.9) {
 }
 
 
-#' @rdname oval
+#' @name oval
+#' @title Dimensions of ovals
+#' @return a tibble of oval dimensions
 oval_dims <- function(P, Q, Mt, Z, PrZ, g, fudge=.9) {
 
   w <- 2
