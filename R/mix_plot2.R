@@ -15,7 +15,7 @@ mix_plot2 <- function(XZ, All, g, M, prior_color='darkgreen') {
     pivot_wider(names_from=X, values_from=c(post, lift)) %>%
     left_join(select(All, Z, lift_targ), by='Z') %>%
     mutate(siglab=str_c("sigma[Q", Z, "]"),
-           mix_color=rgb(get_PQ_mix(post_Q), max=255),
+           mix_color=rgb(get_PQ_mix(post_Q), maxColorValue =255),
            prior_Q=c(g, g)
            )
 
@@ -42,7 +42,7 @@ mix_plot2 <- function(XZ, All, g, M, prior_color='darkgreen') {
         X == 'Q' ~ 1,
         X == 'All' & Z == 'A' ~ D2$post_Q[1],
         X == 'All' & Z == 'B' ~ D2$post_Q[2]),
-      color=if_else(str_detect(label, "ATE"), prior_color, rgb(get_PQ_mix(mixQ), max=255))
+      color=if_else(str_detect(label, "ATE"), prior_color, rgb(get_PQ_mix(mixQ), maxColorValue =255))
     )
 
   Err_labs <- D2 %>%
@@ -117,10 +117,9 @@ mix_plot2 <- function(XZ, All, g, M, prior_color='darkgreen') {
     coord_cartesian(xlim=c(-.15, 1.15), ylim=c(-.02, min(1, 1.1 * max(AB_labs$y))), expand=TRUE) +
     theme(axis.text=element_blank(),
           axis.title=element_blank(),
-          panel.grid.minor.y=element_blank(),
-     ##     panel.grid.major.y=element_blank(),
-      ##    panel.background=element_rect(color='blue')
-          )
+          panel.grid.minor.y=element_blank()
+          ) +
+    plot_theme()
 
   return(P1)
 }

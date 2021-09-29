@@ -1,18 +1,4 @@
-#' @rdname oval
-#' @title oval_width
-#' @param PZ, QZ data for P and Q
-#' @param Mt, PrZ, g other parameters
-oval_width <- function(PZ, QZ, Mt, PrZ, g) {
 
-  ## if (PrZ <= .5) {
-  ##   res <- 6 * PrZ
-  ## } else {
-  ##   res <- 1.5
-  ## }
-
-  res <- 2
-  return(res)
-}
 
 #' @rdname oval
 #' @param PZ, QZ Phi values for ad Z
@@ -41,7 +27,7 @@ oval_ypos <- function(PZ, QZ, yrad, g, fudge=.9) {
 #' @rdname oval
 oval_dims <- function(P, Q, Mt, Z, PrZ, g, fudge=.9) {
 
-  w <- oval_width(P, Q, Mt, PrZ, g)
+  w <- 2
   yrad <- oval_yrad(P, Q, w, g, PrZ)
   ypos <- oval_ypos(P, Q, yrad, g, fudge)
 
@@ -64,27 +50,4 @@ oval_dims <- function(P, Q, Mt, Z, PrZ, g, fudge=.9) {
   }
   res <- tibble(Z=Z, w=w, h=yrad, y0=ypos, x0=xpos)
   return(res)
-}
-
-
-theme_egg <- function() {
-  theme_minimal(
-    base_size = font_size,
-    base_family=font_family) +
-    theme(panel.grid=element_blank(),
-          strip.background=element_blank(),
-          strip.text=element_text(size=12, color='black'),
-          axis.title=element_text(size=12),
-          axis.title.x.top=element_text(hjust= .2),
-          axis.ticks=element_blank(),
-          axis.text.x.top=element_text(size=12, vjust= 0, color='black'),
-          axis.text.y=element_text(color='black', angle=90, hjust=.5,
-                                   margin=margin(0, 0, 0, 0),
-                                   vjust= 1,
-                                   size=12),
-          panel.spacing=unit(0, 'pt'),
-          legend.position='bottom',
-          legend.text=element_text(size=16),
-          legend.box.margin=margin(0, 0, 0, 0, unit='pt')
-          )
 }

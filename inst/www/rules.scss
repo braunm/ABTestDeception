@@ -1,21 +1,7 @@
 
-
-/* body {
-   font-family: 'Roboto Condensed', sans-serif;
-   background-color: $body-bg;
-
-   } */
-
-
 h2, h3 {
   font-size: $h4-font-size;
 }
-
-//Sidebar is a .well class
-//.well {
-//  background-color: $body-bg;
-//}
-
 
 .irs {
   font-family: $font-family-sans-serif;
@@ -25,7 +11,6 @@ h2, h3 {
 .offcanvas-body {
   .irs {
     color: $primary;
-
   }
 }
 
@@ -48,11 +33,11 @@ h2, h3 {
    */
 }
 
-.table {
-  tr,td {
-    padding: 0px;
-  }
-}
+/* .table {
+   tr,td {
+   padding: 0px;
+   }
+   } */
 
 .shiny-input-container {
   .control-label {
@@ -60,7 +45,6 @@ h2, h3 {
     font-size: $font-size-sm;
     align: center;
   }
-  border: 1px solid green;
 }
 
 .ratio-box {
@@ -109,3 +93,7 @@ h2, h3 {
   .MathJax_Display {
     @extend .p-0, .m-0;
   }
+
+.egg {
+  border: 1px solid green;
+}

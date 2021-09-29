@@ -16,6 +16,7 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
+StagedInstall: no
 Imports:
    ggplot2,
    tidyr,
@@ -27,7 +28,7 @@ Imports:
    shiny (>= 1.7),
    rlang,
    ggrepel,
-   bslib (>= 0.3.0.9000),
+   bslib (>= 0.3),
    sass,
    shinyWidgets,
    showtext,

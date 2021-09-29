@@ -18,27 +18,35 @@ theme_custom <- function(font_size=11, font_root='sans') {
 #' @rdname themes
 #' @export
 plot_theme <- function() {
-  theme_minimal() +
-    theme(panel.grid.minor = element_blank(),
-          text=element_text(size=16),
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major=element_line(size=.5),
+        text=element_text(size=12),
           plot.margin=margin())
 }
+
+#' @name get rules file
+#' @title sass file
+rules_file <- function() {
+  system.file("www/rules.scss", package="ABTestDeception")
+}
+
 
 #' @name app_theme
 #' @title the theme of the app
 #' @return Sass theme for the app
 #' @export
 app_theme <-  function() {
-
   bslib::bs_theme(version="5",
                   primary='#354c97',
                   secondary = '#212529',
                   success='rgba(89,195,195,1)',
                   warning='orange',
+                  light='white',
                   base_font=font_google("Roboto Condensed"),
                   heading_font=font_google("Roboto Condensed"),
                   font_scale=.8) %>%
-    bslib::bs_add_variables("offcanvas-horizontal-width"="300px",
-                            "offcanvas-vertical-height"="20vh") %>%
-    bslib::bs_add_rules(sass::sass_file(rules_file))
+    bslib::bs_add_variables(
+      "offcanvas-horizontal-width"="300px",
+      "offcanvas-vertical-height"="20vh") %>%
+    bslib::bs_add_rules(sass::sass_file(rules_file()))
 }

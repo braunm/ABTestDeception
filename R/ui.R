@@ -1,6 +1,4 @@
 
-
-
 offcanvas <- div(class= "offcanvas offcanvas-top", tabindex="-1",
                  `data-bs-scroll`='true', `data-bs-backdrop`='false',
                  id="settings",
@@ -27,22 +25,23 @@ offcanvas_btn <- tags$a(class="btn btn-primary", `data-bs-toggle`="offcanvas",
 
 
 
-header <-     div(class='position-fixed bg-light',
+header <-     div(class='position-fixed bg-light border',
                   div(class='d-flex flex-nowrap',
                       offcanvas,
                       div(class='me-auto', offcanvas_btn),
                       div(class='me-auto', h3("Divergent Delivery and Response Heterogeneity"))),
                   div(class="row",
-                      div(class='col-6',
+                      div(class='col-6 border',
                           div(class='row ratio-sliders border ',
-                              div(class='d-flex me-auto', "Ratios of targeting probabilities"),
+                              div(class='d-flex flex-nowrap justify-content-center',
+                                  "Ratios of targeting probabilities"),
                               this_sliderBox("at", sldr$at, selected=1, width='130px'),
                               this_sliderBox("pt", sldr$pt, selected=1, width='130px'),
                               this_sliderBox("rt", sldr$rt, selected=5, width='130px')
                               )),
-                      div(class='col-6',
+                      div(class='col-6 border',
                           div(class='row ratio-sliders border',
-                              div(class='d-flex justify-content-center',
+                              div(class='d-flex flex-nowrap justify-content-center',
                                   "Ratios of expected conversion rates"),
                               this_sliderBox("ay", sldr$ay, selected=2, width='130px'),
                               this_sliderBox("py", sldr$py, selected=2, width='130px'),
@@ -54,16 +53,16 @@ header <-     div(class='position-fixed bg-light',
 
 body <-  div(
              div(class="row",style="padding-top: 230px;",
-                 div(class='col-6 border',
-                     div(class='d-flex flex-wrap align-items-start justify-content-around',
-                             plotOutput("areaTarg", height='300px', width='50%'),
-                             tableOutput("targ_table")
+                 div(class='col-6',
+                     div(class='d-flex flex-wrap align-items-start justify-content-center',
+                         plotOutput("areaTarg", height='300px', width='50%'),
+                         tableOutput("targ_table")
                          )
                      ),
-                 div(class='col-6 border',
-                     div(class='d-flex flex-wrap align-items-start justify-content-around',
-                             plotOutput("areaEY", height='300px', width='50%'),
-                             tableOutput("EY_table")
+                 div(class='col-6',
+                     div(class='d-flex flex-wrap align-items-start justify-content-center',
+                         plotOutput("areaEY", height='300px', width='50%'),
+                         tableOutput("EY_table")
                          )
                      )
                  ),

@@ -7,7 +7,7 @@ bias_plot <- function(pt_idx, ...) {
   x <- c(2^seq(-4,4, length=20), pt_idx)
   data <- F_bias(pt=x, ...)
 
-  args <- list(...)
+ ## args <- list(...)
 
   D2 <- data %>%
     pivot_longer(cols = c('Err_A', 'Err_B', 'bias'), names_to='stat',
@@ -36,9 +36,13 @@ bias_plot <- function(pt_idx, ...) {
                        limits = c(-.15, .15)) +
     scale_color_manual(values=c('Error Ad A'=plot_colors$err_A,
                                 'Error Ad B'=plot_colors$err_B,
-                                Bias='gray50'), guide=guide_none()) +
+                                Bias='gray50'), guide=guide_none())  +
     facet_grid(cols=vars(stat)) +
-    theme(text=element_text(size=16))
+    plot_theme() +
+    theme(plot.margin=margin())
+
+## ,
+##           strip.text=element_text(size=12))
 
   return(P)
 

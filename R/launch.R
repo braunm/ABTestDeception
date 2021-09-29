@@ -2,6 +2,8 @@
 #' @description Runs the ABTestDeception app
 #' @export
 launch <- function(...) {
+  ggplot2::theme_set(theme_minimal(base_size=32))
+  thematic::thematic_shiny(font='auto')
 
   ## Compile Sass into css file (this just seems to work better than bslib's functions.)
 ##  bs_path <- stringr::str_c(.libPaths(), "/bslib/lib/bs5/scss/") ## but use bslib-provided Bootstrap

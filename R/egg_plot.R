@@ -50,12 +50,15 @@ egg_plot2 <- function(XZ, g, zeta, col='PrTargXZ') {
     annotate('rect', xmin= hx + .05, xmax=10, ymin=gx + .05, ymax=10, color=plot_colors$P, alpha=0, size=1) +
     annotate('rect', xmin= -10, xmax=hx - .05, ymin=gx - .05, ymax= -10, color=plot_colors$Q, alpha=0, size=1) +
     annotate('rect', xmin= hx + .05, xmax=10, ymin=gx - .05, ymax= -10, color=plot_colors$Q, alpha=0, size=1) +
-    geom_text(data=q1, aes(x=x0, y=11, label=axislab)) +
-    geom_text(data=labX, aes(x= -11, y=y0, label=lab, color=Xname), angle=90) +
+    geom_text(data=q1, aes(x=x0, y=11, label=axislab), size=5) +
+    geom_text(data=labX, aes(x= -11, y=y0, label=lab, color=Xname), angle=90, size=5) +
     scale_color_manual(values=c(Poets=plot_colors$P, Quants=plot_colors$Q), guide=guide_none()) +
     coord_fixed(ratio=1, xlim=c(-12, 11), ylim=c(-11, 12), expand = FALSE) +
+    plot_theme() +
     theme(axis.text=element_blank(),
-          axis.title=element_blank())
+          axis.title=element_blank(),
+          panel.grid.minor=element_blank(),
+          plot.margin=margin(0, 0, 0, 0))
 return(P)
 
 }

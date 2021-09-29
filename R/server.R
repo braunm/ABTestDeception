@@ -18,24 +18,15 @@ server <- function(input, output, session) {
                    1.00001, eval(parse(text=input$ry)))
   })
 
-
   AA <- reactive({F_all(targ$at, targ$pt, targ$rt, input$Mt,
                         Y$ay, Y$py, Y$ry, input$My,
                         input$gamma, input$zeta, input$EY0P, input$EY0Q)})
-
 
   tmp <- reactive({
     AA()$XZ %>%
     dplyr::select(X, Z, post, lift) %>%
       pivot_wider(names_from=X, values_from=c(post, lift))
   })
-
-
-  ## PrX <- reactive({
-  ##   req(input$gamma)
-  ##   tibble(X=c('P', 'Q'),
-  ##          PrX=c(input$gamma, 1 - input$gamma))
-  ## })
 
   output$mix_plot <- renderPlot({
     mix_plot2(AA()$XZ, AA()$all, input$gamma, input$My)
@@ -89,11 +80,6 @@ server <- function(input, output, session) {
         kableExtra::add_header_above(c(" ", "Conversion Rate"=2)) %>%
         kableExtra::add_header_above(c(" ", "Audience"=2))
   }
-
-
-
-
-
 
   output$agg_table <- function() {
 
