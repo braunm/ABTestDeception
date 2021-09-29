@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>compute ellipse coordinates — compute_ellipse • ABTestDeception</title>
+<title>compute ellipse coordinates assumming no rotation — compute_ellipse2 • ABTestDeception</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,8 @@
 
 
 
-<meta property="og:title" content="compute ellipse coordinates — compute_ellipse" />
-<meta property="og:description" content="compute ellipse coordinates
-compute ellipse coordinates assumming no rotation
+<meta property="og:title" content="compute ellipse coordinates assumming no rotation — compute_ellipse2" />
+<meta property="og:description" content="compute ellipse coordinates assumming no rotation
 wrapper around compute_ellipse for tibble
 bounding box on x axis" />
 
@@ -111,27 +110,22 @@ bounding box on x axis" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>compute ellipse coordinates</h1>
+    <h1>compute ellipse coordinates assumming no rotation</h1>
     
     <div class="hidden name"><code>ellipse.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>compute ellipse coordinates</p>
-<p>compute ellipse coordinates assumming no rotation</p>
+    <p>compute ellipse coordinates assumming no rotation</p>
 <p>wrapper around compute_ellipse for tibble</p>
 <p>bounding box on x axis</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>compute_ellipse</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>h</span>, <span class='va'>w</span>, <span class='va'>x0</span>, <span class='va'>y0</span>, <span class='va'>th</span><span class='op'>)</span>
-
-<span class='fu'>compute_ellipse2</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>h</span>, <span class='va'>w</span>, <span class='va'>x0</span>, <span class='va'>y0</span><span class='op'>)</span>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>compute_ellipse2</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>h</span>, <span class='va'>w</span>, <span class='va'>x0</span>, <span class='va'>y0</span><span class='op'>)</span>
 
 <span class='fu'>func_ellipse</span><span class='op'>(</span><span class='va'>D</span>, nx <span class='op'>=</span> <span class='fl'>200</span><span class='op'>)</span>
 
-<span class='fu'>get_x_bounds</span><span class='op'>(</span><span class='va'>w</span>, <span class='va'>h</span>, <span class='va'>th</span><span class='op'>)</span>
-
-<span class='fu'>sample_ellipse</span><span class='op'>(</span><span class='va'>D</span>, n <span class='op'>=</span> <span class='fl'>100</span>, pctR1 <span class='op'>=</span> <span class='fl'>0.5</span>, padding <span class='op'>=</span> <span class='fl'>0.001</span><span class='op'>)</span></code></pre></div>
+<span class='fu'>get_x_bounds</span><span class='op'>(</span><span class='va'>w</span>, <span class='va'>h</span>, <span class='va'>th</span><span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -153,28 +147,12 @@ bounding box on x axis" />
       <td><p>center</p></td>
     </tr>
     <tr>
-      <th>th</th>
-      <td><p>angle or rotation, in radians</p></td>
-    </tr>
-    <tr>
       <th>D</th>
-      <td><p>tibble with ellipse parameters</p></td>
+      <td><p>tibble with w, h, x0, y0, and th</p></td>
     </tr>
     <tr>
       <th>nx</th>
       <td><p>number of samples (some of these may be dropped if the ellipse is rotated).</p></td>
-    </tr>
-    <tr>
-      <th>n</th>
-      <td><p>number of draws per class</p></td>
-    </tr>
-    <tr>
-      <th>pctR1</th>
-      <td><p>pct in treatment group</p></td>
-    </tr>
-    <tr>
-      <th>padding</th>
-      <td><p>factor to keep points away from the border</p></td>
     </tr>
     <tr>
       <th>rotation</th>
@@ -185,7 +163,6 @@ bounding box on x axis" />
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>a tibble with x and the two y values (may include NaN)</p>
-<p>a tibble with x and the two y values (may include NaN)</p>
 <p>tibble with x, yL, yU, and non-ellipse paramters from D (e.g., Z, col)</p>
 <p>vector with xmin and xmax</p>
 

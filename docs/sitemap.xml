@@ -22,6 +22,9 @@
     <loc>https://braunm/github.io/ABTestDeception/reference/F_all.html</loc>
   </url>
   <url>
+    <loc>https://braunm/github.io/ABTestDeception/reference/F_bias.html</loc>
+  </url>
+  <url>
     <loc>https://braunm/github.io/ABTestDeception/reference/analytic_posteriors.html</loc>
   </url>
   <url>
@@ -68,6 +71,9 @@
   </url>
   <url>
     <loc>https://braunm/github.io/ABTestDeception/reference/plot_diff.html</loc>
+  </url>
+  <url>
+    <loc>https://braunm/github.io/ABTestDeception/reference/plot_theme.html</loc>
   </url>
   <url>
     <loc>https://braunm/github.io/ABTestDeception/reference/probabilities.html</loc>
