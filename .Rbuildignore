@@ -4,3 +4,5 @@
 ^pkgdown$
 README\.Rmd
 README\.html
+^nobuild/*
+^vignettes/*

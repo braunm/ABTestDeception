@@ -8,6 +8,8 @@ authors:
 template:
   params:
     bootswatch: united
+  assets: assets
+
 
 reference:
 - title: Launching the app
@@ -15,3 +17,6 @@ reference:
     This is the only function you need to know.
 - contents:
     - launch
+
+articles:
+  main: Braun_Schwartz_2022_AB_Test_Deception.pdf

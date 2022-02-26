@@ -1,8 +1,8 @@
-pandoc: '2.13'
-pkgdown: 1.6.1.9001
-pkgdown_sha: aac98c389188c22dfa3d8de78462e19e8b8da0cc
+pandoc: 2.17.1.1
+pkgdown: 1.6.1
+pkgdown_sha: ~
 articles: {}
-last_built: 2021-09-29T04:21Z
+last_built: 2022-02-26T00:59Z
 urls:
   reference: https://braunm/github.io/ABTestDeception/reference
   article: https://braunm/github.io/ABTestDeception/articles
