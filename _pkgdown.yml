@@ -1,22 +1,16 @@
-url: https://braunm/github.io/ABTestDeception
-
+kurl: https://braunm.github.io/ABTestDeception/
 authors:
 - name: Michael Braun
   href: https://braunm.github.io
 - name: Eric Schwartz
-
 template:
   params:
     bootswatch: united
   assets: assets
-
-
 reference:
 - title: Launching the app
-  desc: >
+  desc: |
     This is the only function you need to know.
-- contents:
-    - launch
-
+- contents: launch
 articles:
   main: Braun_Schwartz_2022_AB_Test_Deception.pdf
